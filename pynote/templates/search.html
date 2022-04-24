@@ -1,0 +1,18 @@
+{% extends "base.html" %} {% block title %}Search{% endblock %} {% block content
+%}
+<form method="POST">
+  <h3 align="center">Глобальный поиск</h3>
+    <div class="form-group">
+    <label for="firstName">Имя</label>
+    <input
+      type="text"
+      class="form-control"
+      id="firstName"
+      name="firstName"
+      placeholder="Введите имя пользователя"
+    />
+  </div>
+  <br />
+  <button type="submit" class="btn btn-primary">Поиск</button>
+</form>
+{% endblock %}

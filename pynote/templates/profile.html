@@ -1,0 +1,21 @@
+{% extends "base.html" %} {% block title %}Profile{% endblock %} {% block content
+%}
+<h1 align="center">Профиль</h1>
+<table border="0" class="profile-table" align="center">
+	<tr><td valign="top">
+		<div class="profile-ava"><img src="{{ url_for('views.avatar') }}"></div>
+		<div class="profile-load">
+		<form action="{{url_for('views.upload')}}" method="POST" enctype="multipart/form-data">
+			<p><input type="file" name="file">
+			<p><input type="submit" value="Загрузить">
+		</form>
+		</div>
+	</td>
+	<td valign="top" class="profile-panel">
+		<ul class="profile-info">
+		<li>Имя: {{ current_user.first_name }}</li>
+		<li>Email: {{ current_user.email }}</li>
+		</ul>
+	</td></tr>
+</table>
+{% endblock %}
